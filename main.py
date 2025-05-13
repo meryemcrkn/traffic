@@ -29,9 +29,9 @@ async def predict(file: UploadFile = File(...)):
     img = cv2.imdecode(img_array, cv2.IMREAD_COLOR)
 
     # Her modeli çalıştır
-    result_sign = model_sign(img)[0].tojson()
-    result_light = model_light(img)[0].tojson()
-    result_lane = model_lane(img)[0].tojson()
+    result_sign = model_sign(img)[0].to_json()
+    result_light = model_light(img)[0].to_json()
+    result_lane = model_lane(img)[0].to_json()
 
     return {
         "traffic_sign": result_sign,
